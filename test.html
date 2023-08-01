@@ -5,6 +5,9 @@
     <title>Page Title</title>
   </head>
   <body>
+    <input type="text" id="textBox" /><br /><br />
+    <div id="output"></div>
+
     <script>
       // let a = 10;
       // let b = 7 * a;
@@ -23,15 +26,65 @@
       // const bigmouth = "I've got no right to take my place…";
       // console.log(bigmouth);
 
-      let shoppingDone = false;
-      let childsAllowance;
+      // let shoppingDone = false;
+      // let childsAllowance;
 
       // We don't need to explicitly specify 'shoppingDone === true'
-      if (shoppingDone) {
-        childsAllowance = 10;
-      } else {
-        childsAllowance = 5;
+      // if (shoppingDone) {
+      //   childsAllowance = 10;
+      // } else {
+      //   childsAllowance = 5;
+      // }
+
+      // const myText = "I am a string";
+      // const newString = myText.replace("string", "sausage");
+      // console.log(newString);
+
+      // the replace() string function takes a source string,
+      // and a target string and replaces the source string,
+      // with the target string, and returns the newly formed string
+
+      // const myArray = ["I", "love", "chocolate", "frogs"];
+      // const madeAString = myArray.join(" ");
+      // console.log(madeAString);
+      // the join() function takes an array, joins
+      // all the array items together into a single
+      // string, and returns this new string
+
+      // const myNumber = Math.random();
+      // console.log(myNumber);
+      // the random() function generates a random number between
+      // 0 and up to but not including 1, and returns that number
+
+      // const myArray = ["I", "love", "chocolate", "frogs"];
+      // const madeAString = myArray.join(" "); //include a parameter in the join function
+      // console.log(madeAString);
+      // // returns 'I love chocolate frogs'
+
+      // const madeAnotherString = myArray.join(); //If no parameter is included to specify a joining/delimiting character, a comma is used by default.
+      // console.log(madeAnotherString);
+      // // returns 'I,love,chocolate,frogs'
+
+      // function hello(name = "Chris") {
+      //   console.log(`Hello ${name}!`);
+      // }
+
+      // hello("Ari"); // Hello Ari!
+      // hello(); // Hello Chris!
+
+      const textBox = document.querySelector("#textBox");
+      const output = document.querySelector("#output");
+
+      textBox.addEventListener("keydown", function (event) {
+        output.textContent = `You pressed "${event.key}".`;
+      });
+
+      //for console log view
+      function logKey(event) {
+        console.log(`You pressed "${event.key}".`);
       }
+
+      textBox.addEventListener("keydown", logKey);
     </script>
   </body>
 </html>
