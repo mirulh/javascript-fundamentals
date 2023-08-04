@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<script>
+  "use strict";
+
+  let userName = "John";
+
+  function showMessage() {
+    userName = "Bob"; // (1) changed the outer variable, this is because without keyword let, Bob became a global variable thus is the lastest one picked
+
+    let message = "Hello, " + userName;
+    alert(message);
+  }
+
+  alert(userName); // John before the function call
+
+  showMessage();
+
+  alert(userName); // Bob, the value was modified by the function
+</script>
+
+<!--output sequence:
+    John        ,global varable 
+    Hello, Bob  ,local variable
+    Bob         ,global variable (without keyword let it became a global)
+ -->

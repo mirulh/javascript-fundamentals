@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<script>
+  "use strict";
+
+  let userName = "John";
+
+  function showMessage() {
+    let userName = "Bob"; // (1) become a local variable. When using let keyword, Bob is now a local variable and can only be access using showMessage() function.
+
+    let message = "Hello, " + userName;
+    alert(message);
+  }
+
+  alert(userName); // John before the function call
+
+  showMessage();
+
+  alert(userName); // Bob, the value was modified by the function
+</script>
+
+<!--output sequence:
+    John        ,global varable 
+    Hello, Bob  ,local variable
+    John        ,global variable
+ -->

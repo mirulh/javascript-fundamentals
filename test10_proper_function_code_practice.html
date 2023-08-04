@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<script>
+  // The second variant is easier to understand, isn’t it? Instead of the code piece we see a name of the action (isPrime). Sometimes people refer to such code as self-describing.
+
+  // So, functions can be created even if we don’t intend to reuse them. They structure the code and make it readable.
+
+  function showPrimes(n) {
+    for (let i = 2; i < n; i++) {
+      if (!isPrime(i)) continue;
+
+      alert(i); // a prime
+    }
+  }
+
+  function isPrime(n) {
+    for (let i = 2; i < n; i++) {
+      if (n % i == 0) return false;
+    }
+    return true;
+  }
+
+  showPrimes(100); //all primes number between 0 to 100
+</script>
+
+<!-- reference: https://javascript.info/function-basics#functions-comments -->

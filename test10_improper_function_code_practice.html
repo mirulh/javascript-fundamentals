@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<script>
+  // this function contains two that are merge together make it harder to comprehend, now compare it to the next one.
+
+  function showPrimes(n) {
+    nextPrime: for (let i = 2; i < n; i++) {
+      for (let j = 2; j < i; j++) {
+        if (i % j == 0) continue nextPrime;
+      }
+
+      alert(i); // a prime
+    }
+  }
+
+  showPrimes(100);
+</script>
+
+<!-- reference: https://javascript.info/function-basics#functions-comments -->

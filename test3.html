@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Const vs Let</title>
+  </head>
+  <body>
+    <script>
+      //with let you can assign another value to a predefined variables
+      let salary = 100;
+      salary = 200;
+      alert(salary);
+
+      //const does not let you changed a value of variable that is already defined. This is suitable for unchanged value like birthday date, name etc
+
+      const bday = "2.2.2002";
+      bday = "3.2.2002";
+
+      //this will produced uncaught error
+    </script>
+  </body>
+</html>

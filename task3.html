@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<script>
+  // usual way to do
+  function getSmaller(a, b) {
+    if (a < b) {
+      console.log(a);
+      return a;
+    } else {
+      console.log(b);
+      return b;
+    }
+  }
+
+  //using a ? operator to write the function
+
+  function getSmaller(a, b) {
+    // return a < b ? a : b;
+    return a < b ? console.log(a) : console.log(b);
+  }
+
+  getSmaller(2, 5);
+  getSmaller(3, -1);
+  getSmaller(1, 1);
+</script>
+
+<!-- reference: https://javascript.info/function-basics#rewrite-the-function-using-or -->

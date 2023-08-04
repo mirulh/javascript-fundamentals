@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Understanding Parameter</title>
+  </head>
+  <body>
+    <script>
+      "use strict"; //when applying use stritct, the javascript will requires you to declare all variables with let or const keyword
+
+      function exampleFunction() {
+        // x is not declared using let, const, or var
+        x = 10; // This implicitly creates a global variable 'x'
+      }
+
+      exampleFunction();
+
+      console.log(x); // Output: 10
+    </script>
+  </body>
+</html>

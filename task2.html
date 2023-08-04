@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<script>
+  // using ? and in single line code
+  function checkAge(age) {
+    return age > 18 ? true : confirm("Did parents allow you?");
+  }
+
+  //   using || and in single line code
+  function checkAge(age) {
+    return age > 18 || confirm("Did parents allow you?");
+  }
+
+  checkAge(12);
+</script>
+
+<!-- reference: https://javascript.info/function-basics#rewrite-the-function-using-or -->
