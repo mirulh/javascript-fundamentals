@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Assignment 1</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      function add7() {
+        let z = parseInt(x);
+        let result = z + 7;
+        console.log(result);
+      }
+
+      function multiply() {
+        let resultM = a * b;
+        console.log(resultM);
+      }
+
+      function capitalize() {
+        let myString = q;
+        console.log(myString[0].toUpperCase() + myString.slice(1));
+      }
+
+      function lastletter() {
+        let myString2 = w;
+        console.log(myString2.charAt(myString2.length - 1));
+      }
+
+      let x = prompt("x:", "");
+      let a = prompt("a:", "");
+      let b = prompt("b:", "");
+      let q = prompt("Enter a string", "");
+      let w = prompt("Enter another string:", "");
+
+      add7();
+      multiply();
+      capitalize();
+      lastletter();
+    </script>
+  </body>
+</html>
+
+<!-- reference: https://www.theodinproject.com/lessons/foundations-fundamentals-part-3 -->
