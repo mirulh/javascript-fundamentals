@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<script>
+  function getComputerChoice() {
+    const choices = ["rock", "paper", "scissor"];
+    const randomNumber = Math.floor(Math.random() * choices.length);
+    console.log("Bitchass computer choose " + choices[randomNumber]);
+    return choices[randomNumber];
+  }
+
+  function playerSelection() {
+    const selection = prompt("Rock/Paper/Scissor", "").toLowerCase();
+    console.log("But you choose " + selection + " so ");
+    return selection;
+
+    if (
+      selection !== "rock" &&
+      selection !== "paper" &&
+      selection !== "scissor"
+    ) {
+      alert("wrong input!");
+      return;
+    }
+  }
+
+  const computerSelection = getComputerChoice();
+  const userSelection = playerSelection();
+
+  console.log(playRound(userSelection, computerSelection));
+
+  function playRound(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+      return "It's a tie nigga!";
+    } else if (
+      (playerSelection === "rock" && computerSelection === "scissor") ||
+      (playerSelection === "paper" && computerSelection === "rock") ||
+      (playerSelection === "scissor" && computerSelection === "paper")
+    ) {
+      return "You win nigga!";
+    } else {
+      return "You lose nigga!";
+    }
+  }
+</script>

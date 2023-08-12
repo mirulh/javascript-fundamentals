@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Assignment 1</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+
+      //it is important for the sequence to be 3 && 5 first because if it had started with 3 the program will print out only fizz for any numbers that also divisible by 5, like 15 is divisible by 3 and 5
+
+      let n = parseInt(prompt("Enter range:", ""));
+
+      function isFizzBuzz(n) {
+        for (let i = 1; i <= n; i++) {
+          if (i % 3 == 0 && i % 5 == 0) {
+            console.log("FizzBuzz");
+          } else if (i % 3 == 0) {
+            console.log("Fizz");
+          } else if (i % 5 == 0) {
+            console.log("Buzz");
+          } else {
+            console.log(i);
+          }
+        }
+      }
+
+      isFizzBuzz(n);
+    </script>
+  </body>
+</html>
+
+<!-- reference: https://www.theodinproject.com/lessons/foundations-fundamentals-part-3 -->

@@ -4,6 +4,8 @@
 
   // So, functions can be created even if we don’t intend to reuse them. They structure the code and make it readable.
 
+  let n = prompt("Enter range:", "");
+
   function showPrimes(n) {
     for (let i = 2; i < n; i++) {
       if (!isPrime(i)) continue;
@@ -19,7 +21,7 @@
     return true;
   }
 
-  showPrimes(100); //all primes number between 0 to 100
+  showPrimes(n); //all primes number between 0 to 100
 </script>
 
 <!-- reference: https://javascript.info/function-basics#functions-comments -->

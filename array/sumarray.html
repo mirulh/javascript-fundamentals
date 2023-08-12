@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<script>
+  // clean code example (both does the same thing)
+  const sumArray = function (array) {
+    let sum = 0;
+    array.forEach(function (number) {
+      sum += number;
+    });
+    return sum;
+  };
+
+  console.log(sumArray([2, 2, 2]));
+
+  // non clean code example (both does the same thing)
+
+  const x = function (z) {
+    let w = 0;
+    z.forEach(function (q) {
+      w += q;
+    });
+    return w;
+  };
+
+  console.log(x([2, 2, 2]));
+</script>
