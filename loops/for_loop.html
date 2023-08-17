@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>JavaScript For Loop</h1>
+    <h2>For Loop</h2>
+
+    <button id="calculate">Calculate</button>
+    <button id="clear">Clear</button>
+    <pre id="results"></pre>
+
+    <script>
+      const results = document.querySelector("#results");
+
+      function calculate() {
+        //change the i counter will start from that point
+        for (let i = 1; i < 10; i++) {
+          const newResult = `${i} x ${i} = ${i * i}`;
+          results.textContent += `${newResult}\n`;
+        }
+        results.textContent += "\nFinished!";
+      }
+
+      const calculateBtn = document.querySelector("#calculate");
+      const clearBtn = document.querySelector("#clear");
+
+      calculateBtn.addEventListener("click", calculate);
+      clearBtn.addEventListener("click", () => (results.textContent = ""));
+    </script>
+  </body>
+</html>
+
+<!-- reference: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code -->

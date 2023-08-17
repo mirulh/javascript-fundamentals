@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>JavaScript Loop</h1>
+    <h2>When to use for loop over for of</h2>
+
+    <!-- Question: write a code so the output looked like this
+    
+    "My cats are called Pete, Biggles, and Jasmine."-->
+
+    <script>
+      const cats = ["Pete", "Biggles", "Jasmine"];
+
+      let quote = "My cats are called ";
+
+      for (let i = 0; i < cats.length; i++) {
+        if (i === cats.length - 1) {
+          quote = quote + `and ${cats[i]}.`;
+        } else {
+          quote = quote + `${cats[i]}, `;
+        }
+      }
+
+      console.log(quote);
+    </script>
+  </body>
+</html>
+
+<!-- reference: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code#looping_through_collections_with_a_for_loop -->

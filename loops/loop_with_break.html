@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>JavaScript Loop with Break</h1>
+    <h2>The Loop...break Function</h2>
+
+    <label for="search">Search by contact name:</label>
+
+    <!-- const input = document.querySelector("input"); -->
+    <input id="search" type="text" />
+
+    <!-- const btn = document.querySelector("button"); -->
+    <button>Search</button>
+
+    <!-- const para = document.querySelector("p"); -->
+    <p></p>
+
+    <script>
+      const contacts = [
+        "Chsris:0178309205",
+        "Sarah:01234586942",
+        "Bill:0194583593",
+        "Mary:0154536084",
+        "Diane:0135486939",
+        "Sarah 2:0125849683",
+        "Sarah:0128905840",
+      ];
+
+      const para = document.querySelector("p");
+      const input = document.querySelector("input");
+      const btn = document.querySelector("button");
+
+      input.focus(); //the text field is focus all the time even when the page is refreshed
+
+      btn.addEventListener("click", () => {
+        const searchName = input.value.toLowerCase();
+        input.value = "";
+        // input.focus(); //the text field is focus when the button is clicked
+        para.textContent = "";
+
+        //contact is the new contacts
+        for (const contact of contacts) {
+          const splitContact = contact.split(":"); // ':' as a separator in the contact, split until ":"
+          if (splitContact[0].toLowerCase() === searchName) {
+            para.textContent = `${splitContact[0]}'s number is ${splitContact[1]}.`;
+            break;
+            //break is important to break the loop once contact name "name" is found at the earlist of the list
+          }
+        }
+        if (para.textContent === "") {
+          para.textContent = "Contact not found";
+        }
+      });
+
+      //to add key function "Enter" on the button
+      input.addEventListener("keydown", (event) => {
+        if (event.key == "Enter") {
+          btn.click();
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<!-- reference: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code#exiting_loops_with_break -->

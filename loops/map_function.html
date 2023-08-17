@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>JavaScript Map</h1>
+    <h2>The Map Function</h2>
+
+    <script>
+      function toUpper(string) {
+        return string.toUpperCase();
+      }
+
+      const cats = ["Leopard", "Serval", "Jaguar", "Tiger", "Caracal", "Lion"];
+
+      const upperCats = cats.map(toUpper);
+
+      console.log(upperCats);
+      // [ "LEOPARD", "SERVAL", "JAGUAR", "TIGER", "CARACAL", "LION" ]
+    </script>
+  </body>
+</html>
+
+<!-- reference: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code -->
+
+<!-- This code snippet demonstrates the use of the map function in JavaScript to transform the elements of an array. Let's break down the code step by step:
+
+The toUpper function is defined. This function takes a single parameter, which is a string, and returns the uppercase version of that string using the toUpperCase() method.
+
+An array named cats is defined, containing several strings representing different cat species.
+
+The map function is called on the cats array. The map function is used to create a new array by applying a provided function to each element of the original array. In this case, the provided function is toUpper, which converts a string to uppercase.
+
+The result of the map operation is stored in the upperCats variable. This new array contains the uppercase versions of the cat species names, transformed using the toUpper function.
+
+Finally, the console.log statement is used to print out the upperCats array, which contains the uppercase names of the cat species.
+
+When the code is executed, you will see the following output:
+
+css
+Copy code
+[ "LEOPARD", "SERVAL", "JAGUAR", "TIGER", "CARACAL", "LION" ]
+In summary, the map function is a powerful array method that iterates over each element in an array, applies a provided function to each element, and creates a new array containing the results of applying that function to each element. In this code, it was used to convert each cat species name to uppercase using the toUpper function. -->

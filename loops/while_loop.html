@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>JavaScript While Loop</h1>
+    <h2>The While...Loop Function</h2>
+
+    <script>
+      const cats = ["Pete", "Biggles", "Jasmine"];
+
+      let myFavoriteCats = "My cats are called ";
+
+      let i = 0;
+
+      while (i < cats.length) {
+        if (i === cats.length - 1) {
+          myFavoriteCats += `and ${cats[i]}.`;
+        } else {
+          myFavoriteCats += `${cats[i]}, `;
+        }
+
+        i++;
+      }
+
+      console.log(myFavoriteCats); // "My cats are called Pete, Biggles, and Jasmine."
+    </script>
+  </body>
+</html>
+
+<!-- reference: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code#skipping_iterations_with_continue-->

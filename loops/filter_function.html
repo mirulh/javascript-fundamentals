@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>JavaScript Filter</h1>
+    <h2>The Filter Function</h2>
+
+    <script>
+      function lCat(cat) {
+        return cat.startsWith("L");
+      }
+
+      const cats = ["Leopard", "Serval", "Jaguar", "Tiger", "Caracal", "Lion"];
+
+      const filtered = cats.filter(lCat);
+
+      console.log(filtered);
+      // [ "Leopard", "Lion" ]
+    </script>
+  </body>
+</html>
+
+<!-- reference: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code -->

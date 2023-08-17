@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>JavaScript For...Of</h1>
+    <h2>The For Of function</h2>
+
+    <script>
+      function count() {
+        const cats = [
+          "Leopard",
+          "Serval",
+          "Jaguar",
+          "Tiger",
+          "Caracal",
+          "Lion",
+        ];
+
+        for (const cat of cats) {
+          //using for of instead of for loop
+          alert(cat);
+          console.log(cat);
+        }
+        console.log("Finished Counting!");
+      }
+
+      count();
+    </script>
+  </body>
+</html>

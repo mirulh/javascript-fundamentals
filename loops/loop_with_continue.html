@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>JavaScript Loop with Continue</h1>
+    <h2>The Loop...continue Function</h2>
+
+    <label for="number">Enter number:</label>
+
+    <input id="number" type="number" />
+
+    <button>Generate integer squares</button>
+
+    <p>Output:</p>
+
+    <script>
+      const para = document.querySelector("p");
+      const input = document.querySelector("input");
+      const btn = document.querySelector("button");
+
+      input.focus(); //the text field is focus all the time even when the page is refreshed
+
+      btn.addEventListener("click", () => {
+        para.textContent = "Output: ";
+        const num = input.value;
+        input.value = "";
+        input.focus();
+
+        for (let i = 1; i < num; i++) {
+          let sqRoot = Math.sqrt(i);
+          if (Math.floor(sqRoot) !== sqRoot) {
+            continue; //without continues; it will print out all the iteration
+            // break; if replace by break instead the iteration will stop at 1 since it already satisfied the condition
+          }
+          para.textContent = para.textContent + `${i}(${sqRoot}), `; //have to investigate and understand this part more
+        }
+      });
+
+      //to add key function "Enter" on the button
+      input.addEventListener("keydown", (event) => {
+        if (event.key == "Enter") {
+          btn.click();
+        }
+      });
+    </script>
+  </body>
+</html>
+
+<!-- reference: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code#skipping_iterations_with_continue-->
