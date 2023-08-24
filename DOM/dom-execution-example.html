@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <!-- your HTML file: -->
+    <h1>THE TITLE OF YOUR WEBPAGE</h1>
+    <div id="container"></div>
+
+    <script>
+      // your JavaScript file
+      const container = document.querySelector("#container");
+
+      const content = document.createElement("div");
+      content.classList.add("content");
+      content.textContent = "This is the glorious text-content!";
+
+      container.appendChild(content);
+
+      const text = document.createElement("p"); //create the element first
+      text.classList.add("text"); //add the element as class = text
+      text.textContent = "Hey I'm red!"; //add a text to the content of "text"
+      text.style.color = "red"; //add the color to the text
+
+      container.appendChild(text); //add the element as a child under container
+
+      const header = document.createElement("h3");
+      header.classList.add("header");
+      header.textContent = "I'm a blue h3!";
+      header.style.color = "blue";
+
+      container.appendChild(header);
+
+      //using textNode instead of textContent
+      // const header = document.createElement("h3");
+      // const textNode = document.createTextNode("I'm a ");
+      // const span = document.createElement("span");
+      // span.textContent = "blue";
+      // span.style.color = "blue";
+      // textNode.appendChild(span);
+      // textNode.append(" h3!");
+
+      // header.appendChild(textNode);
+
+      const pinkBorder = document.createElement("div");
+      pinkBorder.classList.add("border");
+      pinkBorder.style.backgroundColor = "pink";
+      pinkBorder.style.border = "solid";
+
+      container.appendChild(pinkBorder); // 1) container stored pinkBorder
+
+      const header1 = document.createElement("h1");
+      const textnode = document.createTextNode("I'm in a div");
+
+      header1.appendChild(textnode); // 2) header1 stored textnode
+      pinkBorder.appendChild(header1); // 3) pinkBorder stored header1
+
+      //the sequence, container > pinkborder > header1 > textnode
+      // para and header is append to pinkBorder, pinkBorder is append to container
+
+      const para = document.createElement("p");
+      const textnode2 = document.createTextNode("ME TOO!");
+
+      para.appendChild(textnode2);
+      pinkBorder.appendChild(para);
+
+      console.log(document.documentElement.outerHTML); // !!IMPORTANT , Outputs the entire HTML of the page after the DOM is implemented
+    </script>
+  </body>
+</html>
+<!-- After the JavaScript code is run, our DOM tree will look like this:
+
+    <body>
+  <h1>
+    THE TITLE OF YOUR WEBPAGE
+  </h1>
+  <div id="container">
+  	<div class="content">
+      This is the glorious text-content!
+    </div>
+  </div>
+</body>
+
+!!IMPORTANT: 
+Keep in mind that the JavaScript does not alter your HTML, but the DOM - your HTML file will look the same, but the JavaScript changes what the browser renders.
+
+chatgpt alternative
+
+// Create elements
+const container = document.getElementById("container");
+
+// Create and add a <p> with red text
+const pElement = document.createElement("p");
+pElement.textContent = "Hey I'm red!";
+pElement.style.color = "red";
+container.appendChild(pElement);
+
+// Create and add an <h3> with blue text
+const h3Element = document.createElement("h3");
+h3Element.textContent = "I'm a blue h3!";
+h3Element.style.color = "blue";
+container.appendChild(h3Element);
+
+// Create and add a <div> with specified styles
+const divElement = document.createElement("div");
+divElement.style.border = "1px solid black";
+divElement.style.backgroundColor = "pink";
+
+// Create and add an <h1> inside the <div>
+const h1InsideDiv = document.createElement("h1");
+h1InsideDiv.textContent = "I'm in a div";
+divElement.appendChild(h1InsideDiv);
+
+// Create and add a <p> inside the <div>
+const pInsideDiv = document.createElement("p");
+pInsideDiv.textContent = "ME TOO!";
+divElement.appendChild(pInsideDiv);
+
+// Add the <div> to the container
+container.appendChild(divElement);
+
+ -->
