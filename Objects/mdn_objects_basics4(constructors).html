@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Object basics: Task 4</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <!-- <link rel="stylesheet" href="../styles.css" /> -->
+  </head>
+
+  <body>
+    <section class="preview"></section>
+  </body>
+  <script>
+    const cat = {
+      name: "Bertie",
+      breed: "Cymric",
+      color: "white",
+      greeting: function () {
+        console.log("Meow!");
+      },
+    };
+
+    function CatCreate(name, breed, color) {
+      this.name = name;
+      this.breed = breed;
+      this.color = color;
+      this.greeting = function () {
+        console.log(`Hello, said ${this.name} the ${this.breed} `);
+      };
+    }
+
+    const cat1 = new CatCreate("Eric", "Maine Coon", "gray");
+    // cat1.name;
+    // cat1.breed;
+    // cat1.color;
+    cat1.greeting();
+
+    // Including statements like cat1.name, cat1.breed, and cat1.color is not necessary to achieve the main goal of your original code, which was to define a constructor function CatCreate and create instances of it with their own name, breed, and color properties.
+
+    // However, if you intend to access these properties later in your program for some specific purpose, then you should include these lines. It's entirely valid to access and use the properties of an object when needed in your code.
+
+    // In summary, whether or not you include these lines depends on your program's requirements. If you don't have a specific need to access these properties immediately after creating the cat1 instance, you can omit them from your original code.
+  </script>
+</html>

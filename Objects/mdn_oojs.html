@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Object-oriented JavaScript example</title>
+  </head>
+
+  <body>
+    <p>
+      This example requires you to enter commands in your browser's JavaScript
+      console (see
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools"
+        >What are browser developer tools</a
+      >
+      for more information).
+    </p>
+
+    <script>
+      const person = {
+        name: ["Bob", "Smith"],
+        age: 32,
+        //alternative, with no function, shorter syntax bio()
+        bio: function () {
+          console.log(
+            `${this.name[0]} ${this.name[1]} is ${this.age} years old`
+          );
+        },
+        //shorter syntax, introduceSelf()
+        introduceSelf() {
+          console.log(`Hi! I'm ${this.name[0]}`);
+        },
+      };
+
+      //   change 2
+
+      const person2 = {
+        name: {
+          first: "Bob",
+          last: "Smith",
+        },
+        age: 32,
+        //alternative, with no function, shorter syntax bio()
+        bio: function () {
+          console.log(
+            `${this.name[0]} ${this.name[1]} is ${this.age} years old`
+          );
+        },
+        //shorter syntax, introduceSelf()
+        introduceSelf() {
+          console.log(`Hi! I'm ${this.name[0]}`);
+        },
+      };
+
+      // change 3 - setting object members
+
+      person2.age = "45";
+      person2["name"]["last"] = "Sammy";
+
+      // change 4 - bracket notation
+
+      const myDataName = "height";
+      const myDataValue = "1.75m";
+      person[myDataName] = myDataValue;
+
+      person[myDataName]; //  1.75m
+      person.height; //       1.75m
+      person[myDataValue]; // undefined
+
+      // change 5 - "this" property
+
+      // You are probably wondering what "this" is. The this keyword refers to the
+      // current object the code is being written inside — so in this case this is equivalent to person.
+      // So why not just write person instead?
+
+      // Well, when you only have to create a single object literal, it's not so useful.
+      // But if you create more than one, this enables you to use the same method definition
+      // for every object you create.
+
+      // Let's illustrate what we mean with a simplified pair of person objects:
+      const person3 = {
+        name: "Chris",
+        surname: "Hems",
+        introduceSelf() {
+          console.log(`Hi! I'm ${this.name} ${this.surname}.`);
+        },
+      };
+
+      const person4 = {
+        name: {
+          first: "Jason",
+          last: "Todd",
+        },
+        introduceSelf() {
+          console.log(`Hi! I'm ${this.name.first} ${this.name.last}.`);
+        },
+      };
+
+      // Change 6 - Introducing constructors
+
+      // creating objects without using constructors
+
+      function createPerson(name) {
+        const obj = {};
+        obj.name = name;
+        obj.introduceSelf = function () {
+          console.log(`Hi! I'm ${this.name}.`);
+        };
+        return obj;
+      }
+
+      const james = createPerson("James");
+      james.name;
+      james.introduceSelf();
+      // "Hi! I'm James."
+
+      const frankie = createPerson("Frankie");
+      frankie.name;
+      frankie.introduceSelf();
+      // "Hi! I'm Frankie."
+
+      // This works fine but is a bit long-winded: we have to create an empty object, initialize it, and return it.
+
+      // Constructors method
+
+      // This works fine but is a bit long-winded: we have to create an empty object, initialize it, and return it.
+      // A better way is to use a constructor. A constructor is just a function called using the new keyword.
+      // When you call a constructor, it will:
+
+      // - create a new object
+      // - bind this to the new object, so you can refer to this in your constructor code
+      // - run the code in the constructor
+      // - return the new object.
+
+      // the constructor (eliminates the need to create empty object)
+      function Person(name) {
+        this.name = name;
+        this.introduceSelf = function () {
+          console.log(`Hi! I'm ${this.name}.`);
+        };
+      }
+
+      // To call Person() as a constructor, we use new:
+
+      // the iteration
+      const emily = new Person("Emily");
+      emily.name;
+      emily.introduceSelf();
+      // "Hi! I'm Emily."
+
+      const brad = new Person("Brad");
+      brad.name;
+      brad.introduceSelf();
+      // "Hi! I'm Brad."
+    </script>
+  </body>
+</html>
+
+<!-- reference: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics -->

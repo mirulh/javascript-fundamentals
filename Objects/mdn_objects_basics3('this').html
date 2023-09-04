@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Object basics: Task 3</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <!-- <link rel="stylesheet" href="../styles.css" /> -->
+  </head>
+
+  <body>
+    <section class="preview"></section>
+  </body>
+  <script>
+    // To make the greeting() method work for any cat object with the same structure,
+    // you can use the this keyword to access the properties of the current cat object.
+    // Here's the updated code for the cat object and the creation of a new cat2 object:
+
+    const cat = {
+      name: "Bertie",
+      breed: "Cymric",
+      color: "white",
+      greeting: function () {
+        console.log(`Hello, said ${this.name} the ${this.breed} `);
+      },
+    };
+    cat.greeting();
+
+    const cat2 = {
+      name: "Coon",
+      breed: "Maine",
+      color: "Gray",
+      greeting: function () {
+        console.log(`Hello, said ${this.name} the ${this.breed} `);
+      },
+    };
+
+    cat2.greeting();
+  </script>
+</html>

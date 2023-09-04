@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- 
+
+!!! Check for emptiness !!!
+Write the function isEmpty(obj) which returns true if the object has no properties, false otherwise.
+
+Should work like that: 
+let schedule = {};
+
+alert( isEmpty(schedule) ); // true
+
+schedule["8:30"] = "get up";
+
+alert( isEmpty(schedule) ); // false
+
+-->
+<script>
+  "use strict";
+
+  let obj = {
+    // name,
+  };
+
+  function isEmpty(obj) {
+    for (let key in obj) {
+      // if the loop has started, there is a property
+      console.log(false);
+      return false;
+    }
+    console.log(true);
+    return true;
+  }
+
+  isEmpty(obj);
+</script>
+
+<!-- reference: https://javascript.info/object#check-for-emptiness -->

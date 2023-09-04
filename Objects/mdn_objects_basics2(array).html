@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Object basics: Task 2</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+    <section class="preview"></section>
+  </body>
+  <script>
+    let bandInfo;
+
+    // Add your code here
+    const myBand = {
+      name: "Hujan",
+      nationality: "East Malaysia",
+      genre: "Indie",
+      members: 4,
+      formed: 1998,
+      split: 2016,
+      albums: [
+        { name: "Aku Skandal", released: 2008 },
+        { name: "Kotak Hati", released: 2018 },
+      ],
+    };
+
+    //   albums: An array representing the albums released by the band. Each array item should be an object containing the following members:
+    //   name: A string representing the name of the album.
+    //   released: A number representing the year the album was released.
+
+    bandInfo = `My favorite band is ${myBand.name}, from ${myBand.nationality}. The band's genre are mostly ${myBand.genre}, and has ${myBand.members} members. The band was formed back in ${myBand.formed} and splitted in ${myBand.split}. Most notable albums were ${myBand.albums[0].name} released in ${myBand.albums[0].released} and ${myBand.albums[1].name} released in ${myBand.albums[1].released}`;
+
+    // Don't edit the code below here!
+
+    const section = document.querySelector("section");
+    let para1 = document.createElement("p");
+    para1.textContent = bandInfo;
+    section.appendChild(para1);
+  </script>
+</html>

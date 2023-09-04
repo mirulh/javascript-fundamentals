@@ -1,0 +1,47 @@
+<!-- Multiply numeric property values by 2 -->
+
+<!-- Create a function multiplyNumeric(obj) that multiplies all numeric property values of obj by 2.
+
+For instance: 
+
+  // after the call
+  //   menu = {
+  //     width: 400,
+  //     height: 600,
+  //     title: "My menu",
+  //   };
+
+-->
+
+<!DOCTYPE html>
+
+<script>
+  let menu = {
+    width: 200,
+    height: 300,
+    title: "My menu",
+  };
+
+  // multiplyNumeric(obj) uses obj instead of menu is just a term of reference form menu / placeholder for whatever the function is called
+  // it is not a good practice for using the same name "menu" for both in the function and when calling it
+  function multiplyNumeric(obj) {
+    for (let key in obj) {
+      if (typeof obj[key] == "number") {
+        obj[key] *= 2;
+      }
+    }
+  }
+
+  multiplyNumeric(menu);
+  //why using the menu and the function using an obj?
+  //- because the function only using obj as a term of reference to whatever value in the parentheses
+
+  alert(
+    "menu width=" +
+      menu.width +
+      " height=" +
+      menu.height +
+      " title=" +
+      menu.title
+  );
+</script>
