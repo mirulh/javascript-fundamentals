@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<script>
+  // 1) Array splice
+  let array = ["I", "study", "Javascript"];
+
+  // array.splice(start, deleteCount, item1, item2, ...)
+  array.splice(1, 1); //start at index 1 and removed only one, 1
+
+  alert(array);
+  alert(array.length);
+
+  //replacing element
+
+  array.splice(1, 1, "hate", "Java");
+
+  alert(array);
+  alert(array.length); //start at index 1, removed 2 item, add 2 item starting from the last point "hate", "Java"
+
+  //   2) Array extract element
+
+  let arr = ["I", "study", "Javascript", "right", "now"];
+
+  alert(`The array: ${arr}`);
+  //   remove 2 first elements
+
+  let removed = arr.splice(0, 2); // "I", "study"
+
+  alert(`Extracted element: ${removed}`);
+
+  alert(`The array: ${arr}`); // "Javascript", "right", "now"
+
+  let removed2 = arr.splice(-2); // 2 elements from behind: "right", "now"
+
+  alert(`Extracted element: ${removed2}`);
+</script>

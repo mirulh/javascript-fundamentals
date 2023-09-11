@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<!-- Almost all array methods that call functions - like find, filter, map, with a notable exception of sort, accept an optional additional parameter thisArg.
+
+here is the full syntax of these methods:
+
+arr.find(func, thisArg);
+arr.filter(func, thisArg);
+arr.map(func, thisArg);
+
+// thisArg is the OPTIONAL last argument  
+-->
+<script>
+  let army = {
+    minAge: 18,
+    maxAge: 27,
+    canJoin(user) {
+      return user.age >= this.minAge && user.age < this.maxAge;
+    },
+  };
+
+  let users = [{ age: 16 }, { age: 20 }, { age: 23 }, { age: 30 }];
+
+  // find users, for who army.canJoin returns true
+
+  let soldiers = users.filter(army.canJoin, army); //<-this
+
+  alert(soldiers.length); // 2
+  // alert(soldiers[0].age); // 20
+  // alert(soldiers[1].age); // 23
+
+  // !!
+  let agesOfSoldiers = "Ages of soldiers who can join: \n";
+  soldiers.forEach((soldier) => {
+    agesOfSoldiers += soldier.age + "\n";
+  });
+
+  alert(agesOfSoldiers);
+
+  // if in the example above we used users.filter(army.canJoin), then army.canJoin would be call as a standalone function, with this = undefined, thus leading to an instant error.
+
+  // a call to users.filter(army.canJoin, army) can be replaced with users.filter(user => army.canJoin(user)), that does the same. The latter is used more often, as it's a bit easier to understand for most people.
+
+  // alternative,
+
+  let plkn = {
+    minAge: 17,
+    maxAge: 30,
+    canJoinOrNot(user2) {
+      return user2.age >= this.minAge && user2.age <= this.maxAge;
+    },
+  };
+
+  let users2 = [{ age: 17 }, { age: 18 }, { age: 31 }, { age: 30 }];
+
+  let soldiers2 = users2.filter(function (user) {
+    return plkn.canJoinOrNot(user);
+  });
+
+  let soldierAges = soldiers2.map((soldier) => soldier.age);
+
+  alert(
+    // `Total number of soldiers: ${
+    //   soldierAges.length
+    // } \n Ages of soldiers who can join: ${soldierAges.join(",")}`
+    `${soldierAges}\n${soldierAges.join(", ")}` //!! how to add comma to the result - use join
+  );
+</script>

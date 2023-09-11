@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<script>
+  // The sort call to arr.sort() sorts the array in place, changing its element order.
+
+  // It also returns the sorted array, but the returned value is usually ignored, as arr itself is modified.
+
+  let arr = [1, 2, 15];
+
+  // the method reorders the content of arr
+  arr.sort();
+
+  alert(arr); // 1, 15, 2
+
+  // The order became 1, 15, 2. Incorrect. But why? -
+  // !! The items are sorted as strings by default
+
+  // Literally, all elements are converted to strings for comparisons. For strings, lexicographic ordering is applied and indeed "2" > "15"
+
+  // for reference: https://static.javatpoint.com/tutorial/dms/images/lexicographic-orders2.png
+
+  // _________________________________________________________________________
+
+  //   To use our own sorting order, we need to supply a function as the argument of arr.sort().
+
+  // The function should compare two arbitrary values and return:
+
+  // Syntax
+
+  function compare(a, b) {
+    if (a > b) return 1; // if the first value is greater than the second
+    if (a == b) return 0; // if values are equal
+    if (a < b) return -1; // if the first value is less than the second
+  }
+
+  function compareNumeric(a, b) {
+    alert(a + "<>" + b); // <> means compare
+
+    if (a > b) return 1 + alert(b);
+    if (a == b) return 0;
+    if (a < b) return -1 + alert(a);
+
+    // Returning 1 indicates that a should come after b.
+    // Returning -1 indicates that a should come before b.
+    // Returning 0 indicates that a and b have the same sorting order and their relative positions should not be changed.
+  }
+
+  let arr2 = [1, 2, 15, 33, 10, 19, 50, 51, 70, 0.2];
+
+  arr2.sort(compareNumeric); //!!
+
+  alert(arr2);
+
+  // other syntax
+
+  let arr3 = [1, 22, 2, 11];
+
+  arr3.sort(function compareNumbers(a, b) {
+    if (a > b) return 1;
+    if (a == b) return 0;
+    if (a < b) return -1;
+  });
+
+  alert(arr3);
+
+  // arrow function
+
+  let arr4 = [11, 2, 15, 22, 99, 0.9111];
+
+  arr4.sort((a, b) => {
+    if (a > b) return 1;
+    if (a == b) return 0;
+    if (a < b) return -1;
+  });
+
+  // alert(arr4);
+
+  // arr4.sort();
+
+  alert(arr4);
+</script>

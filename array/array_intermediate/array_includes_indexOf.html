@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<script>
+  // searching in array
+
+  //indexOf, lastIndexOf, and includes
+
+  //arr.indexOf and arr.includes have the similar syntax and do essentially the same as their string counterparts, but operate on items instead of characters
+
+  // 1) indexOf returns the index if found, otherwise -1
+  // 2) includes returns true or false if found, not found
+
+  let arr = [1, 0, false];
+
+  alert(arr.indexOf(0)); // (index) 1
+  alert(arr.indexOf(false)); // (index) 2
+  alert(arr.indexOf(null)); // -1, not found
+  alert(arr.indexOf(2)); // -1, not found
+
+  alert(arr.includes(1)); //true
+  alert(arr.includes(true)); //false
+
+  //   A minor, but noteworthy feature of includes is that it correctly handles NaN, unlike indexOf:
+
+  const arr2 = [NaN];
+  alert("wrong, index NaN should be 0 not " + arr2.indexOf(NaN)); // -1 (wrong, should be 0)
+  alert("correct, NaN is in the array so " + arr2.includes(NaN)); // true (correct)
+
+  //   !Please note that indexOf uses the strict equality === for comparison. So if we look for false, it finds exactly false and not zero
+
+  // 3) lastIndexOf is the same as indexOf, but looks for from right to left
+
+  let fruits = ["Apple", "Orange", "Apple"];
+
+  alert("returns index " + fruits.indexOf("Apple") + " for the first Apple"); // 0 (first Apple)
+  alert(
+    "returns index " + (fruits.lastIndexOf("Apple") + " for the last Apple")
+  ); // 2 (last Apple)
+</script>

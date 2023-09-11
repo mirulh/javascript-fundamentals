@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<script>
+  // actually, a comparison function is only required to return a positive number to say "greater" and negative to say "less"
+
+  let arr = [2, 1, 15];
+
+  arr.sort(function (a, b) {
+    return a - b;
+  });
+
+  alert(arr); // 1, 2 ,15
+
+  // arrow function
+
+  //   arr.sort((a, b) => a - b);
+
+  // 2) localeCompare for string
+
+  //   Remember strings comparison algorithm? It compares letters by their codes by default.
+
+  // For many alphabets, it’s better to use str.localeCompare method to correctly sort letters, such as Ö.
+
+  // For example, let’s sort a few countries in German:
+
+  let countries = ["Österreich", "Andorra", "Vietnam"];
+
+  alert(countries.sort() + ", wrong order!"); // ['Andorra', 'Vietnam', 'Österreich'] , WRONG should be A, O, V
+
+  alert(countries.sort((a, b) => (a > b ? 1 : -1)) + ", still wrong order!");
+  // ['Andorra', 'Vietnam', 'Österreich'] , WRONG should be A, O, V
+
+  alert(countries.sort((a, b) => a.localeCompare(b)) + ", correct order!"); // Andorra, Österreich, Vietnam (correct!)
+</script>
+
+<!-- reference: https://javascript.info/array-methods -->

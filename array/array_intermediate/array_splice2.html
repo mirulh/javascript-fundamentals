@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<script>
+  let arr = ["I", "study", "Javascript"];
+
+  // from index 2
+  // delete 0
+  // then insert "complex" and "language"
+
+  arr.splice(2, 0, "complex", "language");
+
+  alert(arr); // "I", "study", "complex", "language", "JavaScript"
+
+  //   using negative indexes
+
+  let arr2 = [1, 2, 5];
+
+  //from index
+
+  alert(
+    "using negative index -1 starts the array from end, 5 and add 'add', 'here'"
+  );
+  arr2.splice(-1, 0, "add", "here");
+
+  alert(arr2);
+</script>

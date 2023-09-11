@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--   The methods arr.reduce and arr.reduceRight are a little bit more intricate. They are used to calculate a single value based on the array. 
+
+    - accumulator - is the result of the previous function call, equals initial the first time (if initial is provided) eg. ({function},0 <- initial value)
+
+    - item - is the current array item
+    - index - is its position
+    - array - is the array
+
+    by default arr.reduce(accumulator, item, index, array) - most of the time only accumulator and item is used !!
+    - The function passed to reduce uses only 2 arguments, that’s typically enough. !!
+ 
+
+
+-->
+
+<script>
+  // the syntax is:
+
+  // let value = arr.reduce(function(accumulator,item,index,array){
+  // ...
+  // }, [initial]);
+
+  let arr = [1, 2, 3, 4, 5];
+
+  let totalArray = arr.reduce((total, item) => {
+    console.log(`Total: ${total}`);
+    console.log(`Item: ${item}`);
+    return total + item;
+  }, 0);
+
+  // The result is the same. That’s because if there’s no initial, then reduce takes the first element of the array as the initial value and starts the iteration from the 2nd element.
+
+  console.log(`Final total: ${totalArray}`);
+
+  // 2) Why you should need to include the initial value in reduce
+
+  let arr2 = [];
+
+  // arr2.reduce((sum, current) => sum + current, 0);
+
+  let noInitial = arr2.reduce((total, item) => {
+    return total + item;
+  });
+
+  console.log(arr2); // Error - no initial value
+
+  // 3) The method arr.reduceRight does the same, but goes from right to left.
+</script>
+
+<!-- reference: https://javascript.info/array-methods#reduce-reduceright
+
+additional source: https://www.youtube.com/watch?v=s1XVfm5mIuU-->

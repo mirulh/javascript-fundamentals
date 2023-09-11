@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<script>
+  // 1) Concatenate
+
+  let arr = [1, 2];
+
+  // create an array from: arr and [3,4]
+  alert(arr.concat([3, 4]));
+
+  // create an array from: arr and [3,4] and [5,6]
+  // concatenating multiple arrays
+  alert(arr.concat([3, 4], [5, 6]));
+
+  // create an array from: arr and [3,4], then add values 5, 6
+  // concatenating arrays and values
+  alert(arr.concat([3, 4], 5, 6));
+
+  // Case 1 concatenates two arrays together.
+  // Case 2 concatenates multiple arrays together.
+  // Case 3 concatenates arrays and individual values together.
+
+  //  2) Concatenate with objects - wrong
+
+  let arr2 = [1, 2];
+
+  let arrayLike = {
+    0: "something",
+    // length: 1,
+  };
+
+  alert(arr.concat(arrayLike)); // 1,2, [object Object]
+  // not possible as the objects cannot turn into array
+
+  //!! Concatenate with objects - isConcatSpreadable, right
+
+  let arr3 = [1, 2];
+
+  let arrayLike2 = {
+    0: "something",
+    1: "else",
+    [Symbol.isConcatSpreadable]: true,
+    length: 2,
+  };
+
+  // length: 2: This property indicates the length of the "array-like" object, which is set to 2, similar to the length of the arr array.
+
+  alert(arr.concat(arrayLike2));
+</script>

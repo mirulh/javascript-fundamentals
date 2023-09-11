@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<script>
+  // The arr.forEach method allows to run a function for every element of the array
+
+  // Iterate forEach
+
+  // for each element call alert
+  ["Bilbo", "Gandalf", "Nazgul"].forEach(alert);
+
+  let arr = ["Something", "stupid"];
+
+  arr.forEach(alert);
+
+  ["Bilbo", "Gandalf", "Nazgul"].forEach((item, index, array) => {
+    alert(`${item} is at index ${index} in ${array}`);
+  });
+
+  ["Bilbo", "Gandalf", "Nazgul"].forEach((a, b, c) => {
+    alert(`${a} is at index ${b} in ${c}`);
+  });
+</script>
+
+<!-- The forEach method doesn't require you to explicitly define the index and array parameters in your callback function because it automatically provides these values for you. Here's how it works -->
+
+<!-- reference for this code: https://javascript.info/array-methods -->
+
+<!-- reference for forEach callback: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach -->

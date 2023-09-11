@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<script>
+  //   Here’s the situation from real life. We are writing a messaging app, and the person enters the comma-delimited list of receivers: John, Pete, Mary. But for us an array of names would be much more comfortable than a single string. How to get it?
+
+  // 1)  The str.split(delim) method does exactly that. It splits the string into an array by the given delimiter delim.
+
+  //   In the example below, we split by a comma followed by space:
+
+  let names = "Bilbo, Gandalf, Nazgul";
+
+  let arr = names.split(", ");
+
+  for (let name of arr) {
+    alert(`A message to ${name}.`);
+
+    // A message to Bilbo.
+    // A message to Gandalf.
+    // A message to Nazgul.
+  }
+
+  //   2) The split method has an optional second numeric argument – a limit on the array length. If it is provided, then the extra elements are ignored. In practice it is rarely used though:
+
+  //   let arr2 = 'Bilbo, Gandalf, Nazgul, Saruman'.split(', ', 2);
+
+  // alternative,
+
+  let names2 = "Bilbo, Gandalf, Nazgul, Saruman";
+
+  let arr2 = names2.split(", ", 2); // this limits to take the name up to 2 only.
+
+  for (let name of arr2) {
+    alert(`Take this, ${name}.`);
+  }
+
+  alert(arr2);
+
+  // 2) Split into letters - split(string)
+
+  let str = "test";
+
+  alert(str.split("")); // t,e,s,t
+
+  // 3) the call arr.join(glue), especially for an array, does the reverse of split. It creates a string of arr items joined by glue between them.
+
+  let arr3 = ["Bilbo", "Gandalf", "Nazgul"];
+
+  let str2 = arr3.join(" and "); // glue the array into a string using ;
+  let str3 = arr3.join(";");
+  alert(str2); // Bilbo and Gandalf and Nazgul
+  alert(str3); // Bilbo;Gandalf;Nazgul
+</script>

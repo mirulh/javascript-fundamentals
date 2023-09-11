@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<script>
+  let array = ["I", "Go", "Home"];
+
+  delete array[1]; //remove go
+
+  alert("This is array 2: " + array[2]); // Home
+  alert("This is array 1 removed: " + array[1]); //undefined
+
+  // now arr = ["I",  , "home"];
+  alert(array.length);
+  console.log(array);
+  console.log(`array equals to ${array.length} including empty`);
+</script>
+
+<!-- The element was removed, but the array still has 3 elements, we can see that arr.length == 3.
+
+ -->
+<!-- That’s natural, because delete obj.key removes a value by the key. It’s all it does. Fine for objects. But for arrays we usually want the rest of elements to shift and occupy the freed place. We expect to have a shorter array now.
+
+So, special methods should be used which is splice -->

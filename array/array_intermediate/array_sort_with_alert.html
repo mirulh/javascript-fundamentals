@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<script>
+  // sort with alert to compare clearly
+
+  const numbers = [1, -2, 15, 2, 0, 8];
+
+  //   numbers.sort(); [-2, 0, 1, 15, 2, 8] , wrong
+
+  numbers.sort(function (a, b) {
+    alert(a + " <> " + b);
+    return a - b; // Return a positive value if a < b
+  });
+
+  console.log(numbers); // [-2, 0, 1, 2, 8, 15], right
+</script>
+
+<!-- !! TL;DR - don't need to care how it internally works! just follow the syntax
+    
+Let’s step aside and think what’s happening. The arr can be array of anything, right? It may contain numbers or strings or objects or whatever. We have a set of some items. To sort it, we need an ordering function that knows how to compare its elements. The default is a string order.
+
+The arr.sort(fn) method implements a generic sorting algorithm. We don’t need to care how it internally works (an optimized quicksort or Timsort most of the time). It will walk the array, compare its elements using the provided function and reorder them, all we need is to provide the fn which does the comparison.
+
+By the way, if we ever want to know which elements are compared – nothing prevents from alerting them: -->
