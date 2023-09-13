@@ -11,7 +11,7 @@
   let arr = names.split(", ");
 
   for (let name of arr) {
-    alert(`A message to ${name}.`);
+    console.log(`A message to ${name}.`);
 
     // A message to Bilbo.
     // A message to Gandalf.
@@ -29,16 +29,16 @@
   let arr2 = names2.split(", ", 2); // this limits to take the name up to 2 only.
 
   for (let name of arr2) {
-    alert(`Take this, ${name}.`);
+    console.log(`Take this, ${name}.`);
   }
 
-  alert(arr2);
+  console.log(arr2);
 
   // 2) Split into letters - split(string)
 
   let str = "test";
 
-  alert(str.split("")); // t,e,s,t
+  console.log(str.split("")); // t,e,s,t
 
   // 3) the call arr.join(glue), especially for an array, does the reverse of split. It creates a string of arr items joined by glue between them.
 
@@ -46,6 +46,6 @@
 
   let str2 = arr3.join(" and "); // glue the array into a string using ;
   let str3 = arr3.join(";");
-  alert(str2); // Bilbo and Gandalf and Nazgul
-  alert(str3); // Bilbo;Gandalf;Nazgul
+  console.log(str2); // Bilbo and Gandalf and Nazgul
+  console.log(str3); // Bilbo;Gandalf;Nazgul
 </script>

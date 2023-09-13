@@ -15,3 +15,28 @@
   console.log(camelize("list-style-image"));
   console.log(camelize("-webkit-transition"));
 </script>
+
+<!-- steps to solve the problem
+
+- create function camelize that takes a string
+- split the string by "-" then added them to the array ->
+  -- ['background', 'color']
+  -- ['list', 'style', 'image']
+  -- ['', 'webkit', 'transition']
+
+- create new array using map() with edification
+  -- if the first word index equal to 0 keep it the same
+  -- else, return the word with the first word to upper cased
+
+- the result is mapped into the array by default
+  -- ['background', 'Color']
+  -- ['list', 'Style', 'Image']
+  -- ['', 'Webkit', 'Transition']
+
+- the array is combine together with join() method. By using join() it removed the array and left it with string
+  -- backgroundColor
+  -- listStyleImage
+  -- WebkitTransition
+
+- camelCase achieved
+-->
