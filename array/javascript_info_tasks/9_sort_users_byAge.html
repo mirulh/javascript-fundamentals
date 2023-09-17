@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<script>
+  let john = { name: "John", age: 25 };
+  let pete = { name: "Pete", age: 30 };
+  let mary = { name: "Mary", age: 28 };
+
+  let arr = [pete, john, mary];
+
+  function sortByAge(arr) {
+    return arr.sort((a, b) => a.age - b.age);
+  }
+
+  console.log(sortByAge(arr));
+
+  // now: [john, mary, pete]
+  alert(arr[0].name); // John
+  alert(arr[1].name); // Mary
+  alert(arr[2].name); // Pete
+</script>
+
+<!-- Problem assessment
+
+Problem statement: write the function sortByAge(users) that gets an array of objects with the age property and sorts them by age
+
+-->
+
+<!-- steps to solve the problem
+
+- create function sortByAge that takes one parameter, array => function sortByAge(arr)
+
+- use arr.sort to sort the array. Sort() method by default sort only strings. To sort numbers we need to use comparison statement 
+  -- => (a,b) => a.age - b.age (to sort in ascending order)   => John, Mary, Pete
+  -- => (a,b) => b.age - a.age (to sort in descending order)  => Pete, Mary, John
+  
+-->
+
+<!-- Array method used 
+  
+sort()
+
+-->

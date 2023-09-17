@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<script>
+  let john = { name: "John", age: 25 };
+  let pete = { name: "Pete", age: 30 };
+  let mary = { name: "Mary", age: 29 };
+
+  let arr = [john, pete, mary];
+
+  // method 1
+
+  function getAverageAge(arr) {
+    let totalAge = 0;
+
+    for (let person of arr) {
+      totalAge = totalAge + person.age;
+    }
+
+    let averageAge = totalAge / arr.length;
+
+    return averageAge;
+  }
+
+  // method 2
+
+  function getAverageAge2(users) {
+    return users.reduce((prev, user) => prev + user.age, 0) / users.length;
+  }
+
+  alert(getAverageAge(arr));
+  alert(getAverageAge2(arr));
+</script>
+
+<!-- Problem assessment
+
+- Problem statement: Write the function getAverageAge(users) that gets an array of objects with property age and returns the average age
+
+The formula for the average : age1 + age2 +... / age.length
+
+-->
+
+<!-- steps to solve the problem 
+
+- create function getAverageAge that takes one parameter, array.
+
+- create return result that return the values of user.age
+
+- use array method reduce() with 2 parameter accumulator and item. 
+    -- Accumulator - represents the total age. It is the result of the previous function call, equals initial the first time
+
+    -- Item - represents the user.age in the array
+
+- lastly, divide the total sum with user.length.
+    -- totalNow + user.age, 0 (initial) / user.length
+
+- alert the result
+
+-->
+
+<!-- Array method used 
+  
+reduce()
+
+-->

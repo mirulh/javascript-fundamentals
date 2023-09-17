@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<script>
+  let arr = [5, 3, 8, 1];
+
+  function filterNumber(arr, a, b) {
+    return arr.filter((item) => a <= item && item <= b);
+  }
+
+  let filtered = filterNumber(arr, 1, 4);
+
+  console.log(filtered);
+</script>
+
+<!-- steps to solve the problem
+
+- create a function filterNumber with three parameter that takes 3 argument referencing to the argument in "let filtered = filterNumber(arr, 1, 4);" eg. arr, 1, 4
+
+- inside filterNumber function create a filter method function with parameter, item. 
+
+- arr.filter which means arr will passed it values one by one into "item" in filter(item)
+    -- filter(5), filter(3), filter(8), filter(1)
+
+- each item iteration will go through the condition "values higher or equal to a' and lower or equal to 'b'". a is 1 and b is 4 then return the result
+
+- console log filtered to see if the affect changes. Filter is an array method that would not change the original array values.
+
+ -->

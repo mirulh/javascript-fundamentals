@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<script>
+  let arr = [5, 2, 1, -10, 8];
+
+  arr.sort(function (a, b) {
+    console.log(b + " <> " + a);
+    console.log(b - a);
+    return b - a;
+  });
+
+  //   arrow function
+
+  //   arr.sort((a, b) => b - a);
+
+  console.log(arr);
+</script>
+
+<!-- Problem assessment
+
+- Problem statement: arrange the elements in an array in descending order
+
+-->
+
+<!-- steps to solve the problem
+
+- use sort() method on the array eg. arr.sort(). Sort by default will arrange the elements in STRING in ascending order. eg [1,12,2] which is wrong! 
+
+- add function to the sort method that compares 2 values a, b by subtracting them. If ascending order use formula (a - b) if descending order (b - a)
+
+    -- It calculates the difference between 'b' and 'a', which means that for each pair of elements.
+
+    -- The sort method uses the result of the comparison function to determine the sorting order.
+
+    -- When the result is positive, it means that 'b' should come before 'a' in the sorted order, resulting in a descending order.
+
+
+
+- How the process works:
+
+when the result is positive b come before a
+when the result is negative a come before b
+
+let arr = [5, 2, 1, -10, 8];
+
+formula = b-a  || '<>' means 'compare'
+
+[5 <> 2]
+
+5 - 2 = 3 / b,a => [5, 2]
+
+[2 <> 1]
+
+2 - 1 = 1 / b,a => [5, 2, 1]
+
+[1 <> -10]
+
+1 - (-10) = 11 / b,a => [5, 2, 1, -10]
+
+[-10 <> 8]
+
+-10 - 8 = -18 / a,b => [5, 2, 1, 8, -10]  end
+
+_________________________________________
+
+Now compare it again for 8
+
+
+arr =  [5, 2, (1, 8), -10] 
+
+[1 <> 8]
+
+1 - 8 = -7 / a,b => [5, 2, 8, 1, -10]
+
+[5, (2, 8), 1, -10]
+
+[2 <> 8]
+
+2 - 8 = -6 / a,b => [5, 8, 2, 1, -10]
+
+[(5, 8), 2, 1, -10]
+
+[5 <> 8]
+
+5 - 8 = -3 / a,b => [8, 5, 2, 1, -10] end
+
+-->
+
+<!-- Array method used 
+  
+sort()
+
+-->

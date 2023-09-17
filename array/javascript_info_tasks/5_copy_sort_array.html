@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<script>
+  let arr = ["HTML", "JavaScript", "CSS"];
+
+  let sorted = copySorted(arr);
+
+  let sortedReverse = copySortedReverse(arr);
+
+  function copySorted(arr) {
+    return arr.slice().sort();
+  }
+
+  function copySortedReverse(arr) {
+    return arr.slice().sort((a, b) => (a > b ? -1 : 1));
+    //return arr.slice().sort((a, b) => b.localeCompare(a)); //sorted backward alphabetically that excludes special letter like Ö
+  }
+
+  console.log(sorted);
+  console.log(sortedReverse);
+  console.log(arr);
+</script>
+
+<!-- Problem assessment 
+
+- Problem statement: create copy of an array without mutation(modifying the array) and then sort the array alphabetically
+-->
+
+<!-- steps to solve
+
+- create a function to copy and sorted the array named copySorted that take array as a parameter
+
+- use slice method to copy the array
+    -- The slice() method can be used to create a copy of an array or return a portion of an array. It is important to note that the slice() method does not alter the original array but instead creates a shallow copy.
+
+- use sort method to sort the array alphabetically. Sort by default sort in string, alphabetically
+
+-  console.log the function and the original array to compare if it met the criteria - the original array does not mutated
+
+-->
+
+<!-- optional:
+
+- sort the array reverse-alphabetically.
+    -- return arr.slice().sort((a, b) => (a > b ? -1 : 1));
+
+    --localeCompare method works the same as the above one but with the exception special characters is excluded and treated as normal alphabet in the alphabetical order.
+
+    -- sort alphabetically localCompare:
+        --  return arr.slice().sort((a, b) => a.localeCompare(b));
+
+        
+    -- sort reverse alphabetically localCompare:
+        -- return arr.slice().sort((a, b) => b.localeCompare(a));  
+
+
+-->
+
+<!-- Array method used 
+  
+sort()
+slice()
+
+-->

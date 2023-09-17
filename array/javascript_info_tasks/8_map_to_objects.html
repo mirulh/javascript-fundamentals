@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<script>
+  let john = { name: "John", surname: "Smith", id: 1 };
+  let pete = { name: "Pete", surname: "Hunt", id: 2 };
+  let mary = { name: "Mary", surname: "Key", id: 3 };
+
+  let users = [john, pete, mary];
+
+  let userMapped = users.map(function (user) {
+    return {
+      fullName: `${user.name} ${user.surname}`,
+      id: `${user.id}`,
+    };
+  });
+
+  // arrow function
+
+  let userMapped2 = users.map((user) => ({
+    fullName: `${user.name} ${user.surname}`,
+    id: `${user.id}`,
+  }));
+
+  // Eureka! so this is what it mean by mapping!
+
+  console.log(userMapped2);
+  console.log(userMapped[0].id);
+  console.log(userMapped[0].fullName);
+  alert(userMapped[0].id);
+  alert(userMapped[0].fullName);
+</script>
+
+<!-- Problem assessment: How to create new object from array using map()
+
+- Problem statement: You have an array of user objects, each one has name, surname and id. Write the code to create another array from it, of objects with id and fullName, where fullName is generated from name and surname.
+
+ -->
+
+<!-- steps to solve the problem
+
+- create a function userMapped that takes one parameter user (item) from users array
+
+- use method map() to create new object variables fullName and id that constructed from name and surname while id remain the same taken from user.id
+
+- the function body need to be curly braces to represent object. Eg.
+users.map((user) => ({function body})
+
+- Log the output to see the changes
+
+-->
+
+<!-- Eureka!
+
+https://www.scaler.com/topics/arrow-function-in-javascript/
+
+Using Arrow function
+
+- In the above arrow function, as only a single statement is thereafter arrow, we can write it without the "return" keyword. However, if there is more than one statement after the arrow, then we need to use curly braces and the "return" keyword.
+
+
+ -->
+
+<!-- Array method used 
+  
+map()
+
+-->
